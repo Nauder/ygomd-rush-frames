@@ -5,6 +5,7 @@ using MasterFaceEditor;
 using HarmonyLib;
 using Il2CppYgomGame;
 using Il2CppYgomGame.Card;
+using UnityEngine.UI;
 
 [assembly: MelonInfo(typeof(CardMod), "Card Patch", "1.0.0", "Eglen")]
 [assembly: MelonGame("Konami Digital Entertainment Co., Ltd.", "masterduel")]
@@ -47,12 +48,13 @@ namespace MasterFaceEditor
                 )
             );
             
-            // Move Atk/Def
+            // Adapt Atk/Def
             MelonCoroutines.Start(WaitAndApplyMove(
                     "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea",
                     new Vector3(-300f, 190f, 0f)
                 )
             );
+            MelonCoroutines.Start(WaitAndApplyAtkDef());
             
             // Hide Spell/Trap Type
             MelonCoroutines.Start(WaitAndApplyMoveAndScale(
@@ -77,27 +79,120 @@ namespace MasterFaceEditor
                 )
             );
             
-            // Move Pendulum Text
+            // Move Pendulum assets
             MelonCoroutines.Start(WaitAndApplyMove(
                     "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/PendulumText",
-                    new Vector3(0f, -112f, 0f)
+                    new Vector3(0, 10, 0)
+                )
+            );
+            MelonCoroutines.Start(WaitAndApplyMove(
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/PendulumScaleL",
+                    new Vector3(-295, -30, 0)
+                )
+            );
+            MelonCoroutines.Start(WaitAndApplyMove(
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/PendulumScaleR",
+                    new Vector3(295, -30, 0)
                 )
             );
             
-            // Move Link Arrows
-            MelonCoroutines.Start(WaitAndApplyMove(
+            // Move and scale Link assets
+            MelonCoroutines.Start(WaitAndApplyMoveAndScale(
                     "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/LinkMarker",
-                    new Vector3(0f, 25f, 0f)
+                    new Vector3(0f, 65f, 0f),
+                    new Vector3(1.6f, 1.6f, 1f)
+                )
+            );
+            MelonCoroutines.Start(WaitAndApplyMoveAndScale(
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/LinkMarkerDark",
+                    new Vector3(0f, 65f, 0f),
+                    new Vector3(1.6f, 1.6f, 1f)
                 )
             );
             MelonCoroutines.Start(WaitAndApplyMove(
-                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/LinkMarkerDark",
-                    new Vector3(0f, 25f, 0f)
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea/LinkNum",
+                    new Vector3(55f, 14f, 0f)
                 )
             );
             
             HarmonyInstance.PatchAll();
             
+        }
+        
+        private IEnumerator WaitAndApplyAtkDef()
+        {
+            const string atkDefArea = "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea";
+            
+            GameObject target = null;
+
+            while (target == null)
+            {
+                target = GameObject.Find($"{atkDefArea}/AtkRoot/AtkText");
+                yield return new WaitForSeconds(1f);
+            }
+            
+            ApplyAtkDef(target, new Vector3(245, 54, 0));
+            
+            target = null;
+            
+            while (target == null)
+            {
+                target = GameObject.Find($"{atkDefArea}/DefRoot/DefText");
+                yield return new WaitForSeconds(1f);
+            }
+            
+            ApplyAtkDef(target, new Vector3(325, 54, 0));
+            
+            target = null;
+            
+            while (target == null)
+            {
+                target = GameObject.Find($"{atkDefArea}/DefRoot");
+                yield return new WaitForSeconds(1f);
+            }
+            
+            var text = target.GetComponent<Text>();
+            if (text != null)
+            {
+                text.text = "";
+            }
+            
+            target = null;
+            
+            while (target == null)
+            {
+                target = GameObject.Find($"{atkDefArea}/AtkRoot");
+                yield return new WaitForSeconds(1f);
+            }
+            
+            text = target.GetComponent<Text>();
+            if (text != null)
+            {
+                text.text = "";
+            }
+            
+        }
+
+        private void ApplyAtkDef(GameObject target, Vector3 position)
+        {
+            var rect = target.GetComponent<RectTransform>();
+            if (rect != null)
+            {
+                rect.localPosition = position;
+                rect.localScale = new Vector3(1.4f, 1.4f, 1f);
+            }
+
+            var text = target.GetComponent<Text>();
+            if (text != null)
+            {
+                text.color = Color.white;
+                text.fontSize = 50;
+                text.fontStyle = FontStyle.Bold;
+                
+                var outline = text.gameObject.AddComponent<Outline>();
+                outline.effectColor = Color.black;
+                outline.effectDistance = new Vector2(1f, -1f);
+            }
         }
         
         private IEnumerator WaitAndApplyMoveAndScale(string path, Vector3 position, Vector3 scale)
@@ -197,7 +292,7 @@ namespace MasterFaceEditor
                 var existing = go.transform.Find("AddedText");
                 if (existing != null)
                 {
-                    var txt = existing.GetComponent<UnityEngine.UI.Text>();
+                    var txt = existing.GetComponent<Text>();
                     if (txt != null)
                     {
                         txt.text = level;
@@ -209,17 +304,16 @@ namespace MasterFaceEditor
                 GameObject textObj = new GameObject("AddedText");
                 textObj.transform.SetParent(go.transform, false);
 
-                var text = textObj.AddComponent<UnityEngine.UI.Text>();
+                var text = textObj.AddComponent<Text>();
                 text.text = level;
                 text.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
                 text.fontStyle = FontStyle.Bold;
-                text.fontSize = 52;
-                text.color = UnityEngine.Color.black;
+                text.fontSize = 56;
+                text.color = Color.white;
                 text.alignment = TextAnchor.MiddleCenter;
                 
-                // add white outline
-                var outline = textObj.AddComponent<UnityEngine.UI.Outline>();
-                outline.effectColor = UnityEngine.Color.white;
+                var outline = textObj.AddComponent<Outline>();
+                outline.effectColor = Color.red;
                 outline.effectDistance = new Vector2(1f, -1f);
 
                 var rect = textObj.GetComponent<RectTransform>();

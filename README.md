@@ -71,6 +71,10 @@ No additional configuration is required.
 
 ## Development
 
+As a disclaimer, I am not a C# developer, nor a game developer, so this project may not be the most efficient or 
+elegant way to achieve the task. If you have any suggestions or improvements, please feel free to open an issue 
+or submit a pull request.
+
 - The project uses Melon Loader as the modding framework
 - Harmony Patcher is used for patching some methods in the game code
 - Currently, development is focused on Windows, as that is the main supported desktop OS for Master Duel

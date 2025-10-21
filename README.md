@@ -9,6 +9,10 @@
 A [MelonLoader](https://github.com/LavaGang/MelonLoader) and [Harmony](https://github.com/pardeike/Harmony) mod for 
 Yu-Gi-Oh! Master Duel that attempts to replace the standard card frames with Yu-Gi-Oh! Rush Duel card frames.
 
+<p align="center">
+<a href="https://ibb.co/DfZDSdT4"><img src="https://i.ibb.co/TMsBFydc/cards.jpg" alt="cards" border="0"></a>
+</p>
+
 ## Table of Contents
 
 - [Description](#description)
@@ -61,12 +65,17 @@ Yu-Gi-Oh! Rush Duel. It repositions and rescales various card elements to match 
 The mod automatically applies the Rush Duel card frame style when viewing cards in-game. 
 No additional configuration is required.
 
+<p align="center">
+<a href="https://ibb.co/TDT72HH0"><img src="https://i.ibb.co/gb7f9DDW/in-game.png" alt="in-game" border="0"></a>
+</p>
+
 ## Known Issues
 
 - Rarity effects are currently removed rather than adapted to the new frame style
 - Some card types may require additional positioning adjustments
 - The card frame replacement may need to be redone after major game updates
 - There is no Ritual Pendulum support yet, a frame would need to be created for it
+- The Pendulum Monster frame cuts a lot of the card artwork off, so some cards may look a little off
 
 ## Possible Future Improvements
 
@@ -83,7 +92,7 @@ or submit a pull request.
 
 ## Development
 
-The .csproj file must use the imports from your Master Duel MelonLoader folder.
+The .csproj file must use the references from your Master Duel MelonLoader folder.
 
 - The project uses Melon Loader as the modding framework
 - Harmony Patcher is used for patching some methods in the game code

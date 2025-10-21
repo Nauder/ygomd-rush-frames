@@ -51,7 +51,10 @@ Yu-Gi-Oh! Rush Duel. It repositions and rescales various card elements to match 
 1. Install MelonLoader for Yu-Gi-Oh! Master Duel
 2. Download the latest release in the `releases` tab
 3. Place the `MasterFaceEditor.dll` file in your MelonLoader `Mods` folder
-4. Launch Yu-Gi-Oh! Master Duel
+4. Replace the card frames in the game with the ones provided in the `res` folder
+    - This can be done with a GUI modding tool such as [Floowandereeze & Modding](https://github.com/Nauder/floowandereeze-and-modding-qt)
+    - Alternatively, you can manually replace the card frames in the game's `data.unity3d` file
+5. Launch Yu-Gi-Oh! Master Duel
 
 ## Usage
 
@@ -62,6 +65,8 @@ No additional configuration is required.
 
 - Rarity effects are currently removed rather than adapted to the new frame style
 - Some card types may require additional positioning adjustments
+- The card frame replacement may need to be redone after major game updates
+- There is no Ritual Pendulum support yet, a frame would need to be created for it
 
 ## Possible Future Improvements
 
@@ -70,9 +75,11 @@ elegant way to achieve the task. If you have any suggestions or improvements, pl
 or submit a pull request.
 
 - Add support for Rarity effects
+- Add support for Pendulum Ritual monsters
 - Adapt Link Monsters to use the proposed design from Phanthelia's Template
 - Adapt Pendulum Monsters to use the proposed design from Phanthelia's Template
 - Change Spell Cards so they have their type written instead of an icon, as they currently do in Rush Duel
+- Make the mod automatically replace the card frames in the game's `data.unity3d` file
 
 ## Development
 

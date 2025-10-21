@@ -65,15 +65,18 @@ No additional configuration is required.
 
 ## Possible Future Improvements
 
+As a disclaimer, I am not a C# developer, nor a game developer, so this project may not be the most efficient or
+elegant way to achieve the task. If you have any suggestions or improvements, please feel free to open an issue
+or submit a pull request.
+
 - Add support for Rarity effects
 - Adapt Link Monsters to use the proposed design from Phanthelia's Template
+- Adapt Pendulum Monsters to use the proposed design from Phanthelia's Template
 - Change Spell Cards so they have their type written instead of an icon, as they currently do in Rush Duel
 
 ## Development
 
-As a disclaimer, I am not a C# developer, nor a game developer, so this project may not be the most efficient or 
-elegant way to achieve the task. If you have any suggestions or improvements, please feel free to open an issue 
-or submit a pull request.
+The .csproj file must use the imports from your Master Duel MelonLoader folder.
 
 - The project uses Melon Loader as the modding framework
 - Harmony Patcher is used for patching some methods in the game code

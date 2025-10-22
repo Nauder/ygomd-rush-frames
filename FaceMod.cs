@@ -246,6 +246,7 @@ namespace MasterFaceEditor
         {
             static void Prefix(ref CardFinishSetting.FinishType finishType)
             {
+                // Make every card have normal finish effect
                 finishType = CardFinishSetting.FinishType.Normal;
             }
         }

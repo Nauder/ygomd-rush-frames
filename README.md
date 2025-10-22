@@ -52,12 +52,14 @@ Yu-Gi-Oh! Rush Duel. It repositions and rescales various card elements to match 
 
 ## Installation
 
-1. Install MelonLoader for Yu-Gi-Oh! Master Duel
-2. Download the latest release in the `releases` tab
+1. Install [MelonLoader](https://github.com/LavaGang/MelonLoader) for Yu-Gi-Oh! Master Duel
+2. Download the latest release in the [releases](https://github.com/Nauder/ygomd-rush-frames/releases) tab
 3. Place the `MasterFaceEditor.dll` file in your MelonLoader `Mods` folder
 4. Replace the card frames in the game with the ones provided in the `res` folder
-    - This can be done with a GUI modding tool such as [Floowandereeze & Modding](https://github.com/Nauder/floowandereeze-and-modding-qt)
-    - Alternatively, you can manually replace the card frames in the game's `data.unity3d` file
+    - The release includes a GUI app to automate this process, but it can be done manually as well
+      - The GUI app source code and the card frames can be found in the [installer repository](https://github.com/Nauder/ygomd-rush-installer)
+    - This can also be done manually with a GUI modding tool, such as [Floowandereeze & Modding](https://github.com/Nauder/floowandereeze-and-modding-qt)
+    - Alternatively, you can manually replace the card frames in the game's `data.unity3d` file using a standard Unity Modding tool, such as [UABEA](https://github.com/nesrak1/UABEA)
 5. Launch Yu-Gi-Oh! Master Duel
 
 ## Usage

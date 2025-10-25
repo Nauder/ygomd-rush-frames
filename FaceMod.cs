@@ -3,7 +3,6 @@ using UnityEngine;
 using System.Collections;
 using MasterFaceEditor;
 using HarmonyLib;
-using Il2CppYgomGame;
 using Il2CppYgomGame.Card;
 using UnityEngine.UI;
 
@@ -38,6 +37,11 @@ namespace MasterFaceEditor
             MelonCoroutines.Start(WaitAndApplyMove(
                 "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/CardPictureTop/Root/Name/BaseText",
                 new Vector3(-15f, 20f, 0f)
+                )
+            );
+            MelonCoroutines.Start(WaitAndApplyMove(
+                    "CardMaskCreator/CardMaskCanvas/CardPictureTop(Clone)/Root/Name/BaseText",
+                    new Vector3(-15f, 20f, 0f)
                 )
             );
             
@@ -237,17 +241,6 @@ namespace MasterFaceEditor
             else
             {
                 MelonLogger.Msg("RectTransform not found on target " + path);
-            }
-        }
-        
-        // TODO: Create new shine effect instead of removing
-        [HarmonyPatch(typeof(CardPictureSetting), nameof(CardPictureSetting.GetCardMaterial))]
-        private class PatchCardPictureSettingGetCardMaterial
-        {
-            static void Prefix(ref CardFinishSetting.FinishType finishType)
-            {
-                // Make every card have normal finish effect
-                finishType = CardFinishSetting.FinishType.Normal;
             }
         }
         

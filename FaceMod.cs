@@ -20,7 +20,7 @@ namespace MasterFaceEditor
             
             // Move and scale Art
             MelonCoroutines.Start(WaitAndApplyMoveAndScale(
-                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/MainArea/Illust",
+                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/MainArea/Illust",
                 new Vector3(0f, 23f, 0f),
                 new Vector3(1.2f, 1.2f, 1f)
                 )
@@ -28,33 +28,28 @@ namespace MasterFaceEditor
             
             // Move Level Stars
             MelonCoroutines.Start(WaitAndApplyMove(
-                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/CardPictureTop/Root/Level",
+                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/CardPictureTop/CardCanvas/Root/Level",
                 new Vector3(0f, -720f, 0f)
                 )
             );
             
             // Move Name
             MelonCoroutines.Start(WaitAndApplyMove(
-                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/CardPictureTop/Root/Name/BaseText",
+                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardNameCanvas/CardPictureTop/Root/Name/BaseText",
                 new Vector3(-15f, 20f, 0f)
-                )
-            );
-            MelonCoroutines.Start(WaitAndApplyMove(
-                    "CardMaskCreator/CardMaskCanvas/CardPictureTop(Clone)/Root/Name/BaseText",
-                    new Vector3(-15f, 20f, 0f)
                 )
             );
             
             // Move Effect
             MelonCoroutines.Start(WaitAndApplyMove(
-                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/TextArea",
+                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/TextArea",
                 new Vector3(0f, -280f, 0f)
                 )
             );
             
             // Adapt Atk/Def
             MelonCoroutines.Start(WaitAndApplyMove(
-                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea",
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea",
                     new Vector3(-300f, 190f, 0f)
                 )
             );
@@ -62,7 +57,7 @@ namespace MasterFaceEditor
             
             // Hide Spell/Trap Type
             MelonCoroutines.Start(WaitAndApplyMoveAndScale(
-                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/SpellTrap",
+                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/SpellTrap",
                 new Vector3(-200f, -230f, 0f),
                 new Vector3(0f, 0f, 0f)
                 )
@@ -70,14 +65,14 @@ namespace MasterFaceEditor
             
             // Move Spell/Trap Type Icon
             MelonCoroutines.Start(WaitAndApplyMove(
-                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/SpellTrapIcon",
+                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/SpellTrapIcon",
                 new Vector3(-300f, -250f, 0f)
                 )
             );
             
             // Move and scale Attribute Icon
             MelonCoroutines.Start(WaitAndApplyMoveAndScale(
-                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/AttrIcon",
+                "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/AttrIcon",
                 new Vector3(281f, 441.4f, 0f),
                 new Vector3(1.3f, 1.3f, 1f)
                 )
@@ -85,36 +80,36 @@ namespace MasterFaceEditor
             
             // Move Pendulum assets
             MelonCoroutines.Start(WaitAndApplyMove(
-                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/PendulumText",
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/PendulumText",
                     new Vector3(0, 10, 0)
                 )
             );
             MelonCoroutines.Start(WaitAndApplyMove(
-                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/PendulumScaleL",
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/PendulumScaleL",
                     new Vector3(-295, -30, 0)
                 )
             );
             MelonCoroutines.Start(WaitAndApplyMove(
-                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/PendulumScaleR",
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/PendulumScaleR",
                     new Vector3(295, -30, 0)
                 )
             );
             
             // Move and scale Link assets
             MelonCoroutines.Start(WaitAndApplyMoveAndScale(
-                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/LinkMarker",
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/LinkMarker",
                     new Vector3(0f, 65f, 0f),
                     new Vector3(1.6f, 1.6f, 1f)
                 )
             );
             MelonCoroutines.Start(WaitAndApplyMoveAndScale(
-                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/LinkMarkerDark",
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/LinkMarkerDark",
                     new Vector3(0f, 65f, 0f),
                     new Vector3(1.6f, 1.6f, 1f)
                 )
             );
             MelonCoroutines.Start(WaitAndApplyMove(
-                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea/LinkNum",
+                    "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea/LinkNum",
                     new Vector3(55f, 14f, 0f)
                 )
             );
@@ -125,7 +120,7 @@ namespace MasterFaceEditor
         
         private IEnumerator WaitAndApplyAtkDef()
         {
-            const string atkDefArea = "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea";
+            const string atkDefArea = "CardPictureCreator/CardPictureCanvas/CardPicture(Clone)/CardCanvas/Root/BottomArea/TextArea/NonEffectArea/AtkDefArea";
             
             GameObject target = null;
 
@@ -214,7 +209,6 @@ namespace MasterFaceEditor
             {
                 rect.localScale = scale;
                 rect.localPosition = position;
-                MelonLogger.Msg("Scale and position applied to " + target.name);
             }
             else
             {
@@ -236,7 +230,6 @@ namespace MasterFaceEditor
             if (rect != null)
             {
                 rect.localPosition = position;
-                MelonLogger.Msg("Position applied to " + path);
             }
             else
             {

@@ -40,6 +40,9 @@
       <Reference Include="UnityEngine.CoreModule">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Yu-Gi-Oh!  Master Duel\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
       </Reference>
+      <Reference Include="UnityEngine.ImageConversionModule">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Yu-Gi-Oh!  Master Duel\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+      </Reference>
       <Reference Include="UnityEngine.UI">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Yu-Gi-Oh!  Master Duel\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
       </Reference>

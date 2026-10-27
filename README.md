@@ -43,6 +43,8 @@ Yu-Gi-Oh! Rush Duel. It repositions and rescales various card elements to match 
   - Attribute icons
   - Spell/Trap type indicators
 - **Level Display**: Replaces traditional level stars with numeric level display
+- **Alternate Artwork**: Expands both standard and special alternate-art illustrations
+- **Overframe Cards**: Keeps the game's original layout, including when switching from a standard card
 
 ## Requirements
 
